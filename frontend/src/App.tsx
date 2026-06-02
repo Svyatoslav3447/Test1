@@ -37,11 +37,10 @@ function App() {
             <Route path="/debts" element={<DebtsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/settings" element={<SettingsPage />} />
+
+             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
-
-        {/* 404 */}
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
