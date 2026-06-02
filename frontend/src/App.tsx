@@ -21,11 +21,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Публічні маршрути (авторизація) */}
+        {/* Публічні */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-
-        {/* Захищені маршрути */}
+    
+        {/* Приватні */}
         <Route element={<ProtectedRoute />}>
           <Route element={<MainLayout />}>
             <Route path="/" element={<DashboardPage />} />
@@ -37,10 +37,11 @@ function App() {
             <Route path="/debts" element={<DebtsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/settings" element={<SettingsPage />} />
-
-             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
+    
+        {/* Глобальна 404 */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
